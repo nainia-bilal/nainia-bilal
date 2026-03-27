@@ -43,7 +43,7 @@ export function Hero() {
           className="mt-12"
         >
           <a
-            href="#projects"
+            href="/projects"
             className="px-8 py-4 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-all shadow-lg shadow-purple-500/20"
           >
             Explore My Work
