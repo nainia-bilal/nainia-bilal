@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-purple-primary: #8b5cf6;
+  --color-purple-secondary: #6d28d9;
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-glass-dark: rgba(0, 0, 0, 0.2);
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-500 font-sans antialiased text-gray-900;
+  }
+
+  .dark body {
+    @apply text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-bold text-gray-900 dark:text-white;
+  }
+  
+  p {
+    @apply leading-relaxed font-medium text-gray-800 dark:text-gray-200;
+  }
+}
+
+/* ✅ Light mode: خليه يبان */
+.glass {
+  @apply backdrop-blur-md border border-white/30 bg-white/20;
+}
+
+/* ✅ Dark mode: زيد contrast */
+.dark .glass {
+  @apply backdrop-blur-md border border-white/20 bg-white/10;
+}
+
+/* glass dark */
+.glass-dark {
+  @apply backdrop-blur-md border border-white/10 bg-black/30;
+}
+
+/* ✅ حل المشكل الحقيقي: النص داخل glass */
+.glass,
+.glass * {
+  @apply text-gray-900;
+}
+
+.dark .glass,
+.dark .glass * {
+  @apply text-white;
+}
+
+/* gradients خليتهم نفسهم */
+.bg-light-gradient {
+  background: radial-gradient(circle at top left, #f5f3ff 0%, #ffffff 50%, #ede9fe 100%);
+}
+
+.bg-dark-gradient {
+  background: radial-gradient(circle at top left, #1e1b4b 0%, #000000 50%, #2e1065 100%);
+}
+
+/* utilities */
+.text-clarity-light {
+  @apply text-gray-900;
+}
+
+.text-clarity-dark {
+  @apply text-white;
+}
